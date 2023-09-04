@@ -1,7 +1,7 @@
-<form action="main.php" class="search-form" method="get">
-    <input type="search" placeholder="Search here.." id="search-box" name="search-book">
+<form action="main.php" class="search-form" method="GET">
+    <input type="search" placeholder="Search here.." id="search-box" name="search">
     
-    <button type="search-box" class="btn btn-outline-primary">search</button>
+    <button type="submit" class="btn btn-outline-primary">search</button>
 
 </form>
 

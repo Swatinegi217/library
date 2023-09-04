@@ -15,6 +15,7 @@
     My Library
               </a>
           <?php include '../helper/search.php'?>
+          <?php include '../helper/sort.php'?>
             <div class="icons">
                 
                 <a href="./register.php" class="fa fa-user"></a>
@@ -22,6 +23,8 @@
                 <a href="../pages/logout.php" class="btn btn-primary">Log Out</button></a>
             </div>
         </div>
+
+        
         
     </header>
     <!-- header section end -->
