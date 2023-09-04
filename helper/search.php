@@ -14,9 +14,9 @@
 
     /* Style for the search input */
     #search-box {
-        padding: 10px;
+        padding: 7px;
         border: 1px solid #ccc;
-        border-radius: 5px;
+        border-radius: 4px;
         width: 200px;
     }
 
