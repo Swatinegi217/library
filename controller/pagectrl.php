@@ -5,14 +5,33 @@ include '../config/database.php';
 $recordsPerPage = 4; // Number of records to display per page
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Current page number
 
+// Handle sorting
+$orderBy = 'bookname'; // Default sorting column
+$orderDirection = 'ASC'; // Default sorting direction
+
+if (isset($_GET['sort'])) {
+    if ($_GET['sort'] === 'asc') {
+        $orderDirection = 'ASC';
+    } elseif ($_GET['sort'] === 'desc') {
+        $orderDirection = 'DESC';
+    }
+}
+
+
 // Calculate the offset for the SQL query
 $offset = ($page - 1) * $recordsPerPage;
 
-// SQL query to fetch data from 'bookdetail' table with pagination
-$sql = "SELECT * FROM bookdetail LIMIT $offset, $recordsPerPage";
+// Define the search query
+$search = isset($_GET['search']) ? $_GET['search'] : ''; // Get the search input
+$search = mysqli_real_escape_string($con, $search); // Prevent SQL injection
+
+// Modify the SQL query to include the search filter
+$sql = "SELECT * FROM bookdetail WHERE bookname LIKE '%$search%' ORDER BY $orderBy $orderDirection LIMIT $offset, $recordsPerPage";  
 $result = mysqli_query($con, $sql);
 
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
