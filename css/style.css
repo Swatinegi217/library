@@ -42,7 +42,7 @@
       
 /* CSS for the header section */
 .header {
-  background-color: #f2f2f2;
+  background-color: #1f1e1e;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
-  color: #000;
+  color: #fff;
 }
 
 .header-1 .logo i {
@@ -92,7 +92,7 @@
 .header-1 .icons a {
   font-size: 18px;
   margin: 0 5px;
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 

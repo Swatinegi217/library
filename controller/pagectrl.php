@@ -2,7 +2,7 @@
 include '../config/database.php';
 
 // Constants for pagination
-$recordsPerPage = 4; // Number of records to display per page
+$recordsPerPage = 3; // Number of records to display per page
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Current page number
 
 // Handle sorting
@@ -50,6 +50,7 @@ $result = mysqli_query($con, $sql);
     <div class="container my-5">
        
     <div class="card">
+        <?php include '../helper/sort.php';?>
             <div class="row mx-auto justify-content-center">
                 <?php
                 if ($result->num_rows > 0) {
@@ -80,16 +81,28 @@ $result = mysqli_query($con, $sql);
         
         <!-- Pagination links -->
         <?php
-        $totalRecords = mysqli_num_rows(mysqli_query($con, "SELECT * FROM bookdetail"));
-        $totalPages = ceil($totalRecords / $recordsPerPage);
-        
-        echo '<ul class="pagination justify-content-center">';
-        for ($i = 1; $i <= $totalPages; $i++) {
-            $active = ($i == $page) ? 'active' : '';
-            echo '<li class="page-item ' . $active . '"><a class="page-link" href="?page=' . $i . '">' . $i . '</a></li>';
-        }
-        echo '</ul>';
-        ?>
-    </div>
+$totalRecords = mysqli_num_rows(mysqli_query($con, "SELECT * FROM bookdetail"));
+$totalPages = ceil($totalRecords / $recordsPerPage);
+
+echo '<ul class="pagination justify-content-center">';
+
+// Create the "Previous" button
+if ($page > 1) {
+    echo '<li class="page-item"><a class="page-link" href="?page=' . ($page - 1) . '">Previous</a></li>';
+}
+
+for ($i = 1; $i <= $totalPages; $i++) {
+    $active = ($i == $page) ? 'active' : '';
+    echo '<li class="page-item ' . $active . '"><a class="page-link" href="?page=' . $i . '">' . $i . '</a></li>';
+}
+
+// Create the "Next" button
+if ($page < $totalPages) {
+    echo '<li class="page-item"><a class="page-link" href="?page=' . ($page + 1) . '">Next</a></li>';
+}
+
+echo '</ul>';
+?>
+
 </body>
 </html>

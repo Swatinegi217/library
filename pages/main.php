@@ -15,7 +15,7 @@
     My Library
               </a>
           <?php include '../helper/search.php'?>
-          <?php include '../helper/sort.php'?>
+          
             <div class="icons">
                 
                 <a href="./register.php" class="fa fa-user"></a>
@@ -34,7 +34,7 @@
             <center>
                 <h1>Welcome to My Library</h1>
                 <p>You can find your books here.</p>
-                <a href="#" class="btn">Explore Here <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="#" class="btn">Explore Here <i class="fa fa-arrow-down" aria-hidden="true"></i></a>
                 <p style="background-image: url('../images/backg.jpeg');">
             </center>
         </div>
