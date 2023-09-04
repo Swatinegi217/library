@@ -1,4 +1,4 @@
-
+<?php include '../session/sessionIn.php'; ?>
 <!-- file include teg -->
 
 <?php include '../config/database.php'; ?>
@@ -12,9 +12,8 @@
         <div class="header-1">
             <a href="#" class="logo">
             <img src="../images/book icon.gif" alt="Library Logo" style="width: 40px; height: 40px; margin-right: 10px;">
-    My Library
-              </a>
-          <?php include '../helper/search.php'?>
+    My Library</a>
+           <?php include '../helper/search.php'?>
           
             <div class="icons">
                 
@@ -44,13 +43,8 @@
 
     <div class="section-2">
         <h2>Featured Products</h2>
-        
-        <?php include '../controller/pagectrl.php'?>
-   
-
-   
-
-    <?php include '../helper/footer.php'; ?>
+         <?php include '../controller/pagectrl.php'?>
+        <?php include '../helper/footer.php'; ?>
 </body>
 
 </html>
