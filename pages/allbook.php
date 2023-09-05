@@ -1,4 +1,4 @@
-<!-- session IN -->
+
 <?php include '../config/database.php'; ?>
 <!-- html header -->
 <?php include '../helper/header.php'; ?>

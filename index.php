@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  $count = 0;
+  ?>
 <!-- html header -->
 <?php include './helper/header.php' ?>
 
